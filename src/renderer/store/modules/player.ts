@@ -1171,7 +1171,7 @@ export const usePlayerStore = defineStore('player', () => {
         checkPlaybackState(playMusic.value);
       }
 
-      // 发布音频就绪事件，让 MusicHook.ts 来处理设置监听器
+      // 发布音频就绪事件
       window.dispatchEvent(
         new CustomEvent('audio-ready', { detail: { sound: newSound, shouldPlay } })
       );

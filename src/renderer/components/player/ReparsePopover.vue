@@ -74,7 +74,7 @@
 
 <script lang="ts" setup>
 import { useMessage } from 'naive-ui';
-import { computed, ref, watch } from 'vue';
+import { ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import { playMusic } from '@/hooks/MusicHook';
@@ -146,6 +146,7 @@ const initSelectedSources = () => {
     try {
       selectedSourcesValue.value = JSON.parse(savedSource);
     } catch (e) {
+      console.error('解析保存的音源设置失败:', e);
       selectedSourcesValue.value = [];
     }
   } else {

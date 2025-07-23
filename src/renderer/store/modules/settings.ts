@@ -10,7 +10,8 @@ import {
   getCurrentTheme,
   getSystemTheme,
   ThemeType,
-  watchSystemTheme} from '@/utils/theme';
+  watchSystemTheme
+} from '@/utils/theme';
 
 export const useSettingsStore = defineStore('settings', () => {
   const theme = ref<ThemeType>(getCurrentTheme());

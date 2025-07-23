@@ -109,7 +109,7 @@ interface Props {
 }
 
 interface Emits {
-  (e: 'colorChange', color: string): void;
+  (e: 'colorChange', _color: string): void;
   (e: 'close'): void;
 }
 
