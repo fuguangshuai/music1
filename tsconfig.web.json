@@ -12,7 +12,7 @@
     "composite": true,
     "target": "esnext",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "node1",
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
