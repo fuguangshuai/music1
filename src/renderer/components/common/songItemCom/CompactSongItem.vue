@@ -106,9 +106,11 @@
 <script lang="ts" setup>
 import { NCheckbox, NEllipsis } from 'naive-ui';
 import { computed, ref } from 'vue';
+
 import { usePlayerStore } from '@/store';
-import BaseSongItem from './BaseSongItem.vue';
 import type { SongResult } from '@/type/music';
+
+import BaseSongItem from './BaseSongItem.vue';
 
 const playerStore = usePlayerStore();
 

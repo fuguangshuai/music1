@@ -535,7 +535,7 @@ class WindowSizeManager {
           `应用页面缩放因子: ${zoomFactor}, 系统缩放比: ${screen.getPrimaryDisplay().scaleFactor}`
         );
       } catch (error) {
-        console.log(`应用页面缩放因子: ${zoomFactor}`);
+        console.error('获取系统缩放比失败:', error);
       }
     } else {
       console.log(`应用页面缩放因子: ${zoomFactor}`);
@@ -562,7 +562,7 @@ class WindowSizeManager {
       try {
         ipcMain.removeHandler(channel);
       } catch (error) {
-        // 忽略错误，处理程序可能不存在
+        console.warn(`移除IPC处理程序 ${channel} 时出错:`, error);
       }
     };
 

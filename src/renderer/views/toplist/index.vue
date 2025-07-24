@@ -40,7 +40,7 @@
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
 
-import { getToplist, getListDetail } from '@/api/list';
+import { getListDetail, getToplist } from '@/api/list';
 import { navigateToMusicList } from '@/components/common/MusicListNavigator';
 import type { IListDetail } from '@/type/listDetail';
 import { formatNumber, getImgUrl, setAnimationClass, setAnimationDelay } from '@/utils';

@@ -265,7 +265,7 @@ class AudioService {
         return;
       }
       const howl = sound as any;
-      // eslint-disable-next-line no-underscore-dangle
+
       const audioNode = howl._sounds?.[0]?._node;
 
       if (!audioNode || !(audioNode instanceof HTMLMediaElement)) {

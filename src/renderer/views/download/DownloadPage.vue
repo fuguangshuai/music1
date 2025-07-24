@@ -429,8 +429,8 @@ import { useI18n } from 'vue-i18n';
 
 import { getMusicDetail } from '@/api/music';
 import { usePlayerStore } from '@/store/modules/player';
-import { getImgUrl } from '@/utils';
 import type { SongResult } from '@/type/music';
+import { getImgUrl } from '@/utils';
 
 const { t } = useI18n();
 const playerStore = usePlayerStore();

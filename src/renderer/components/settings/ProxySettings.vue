@@ -46,10 +46,10 @@
 </template>
 
 <script setup lang="ts">
+import type { FormRules } from 'naive-ui';
+import { useMessage } from 'naive-ui';
 import { ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useMessage } from 'naive-ui';
-import type { FormRules } from 'naive-ui';
 
 const props = defineProps({
   show: {
@@ -143,6 +143,7 @@ const handleProxyConfirm = async () => {
     visible.value = false;
     message.success(t('settings.network.messages.proxySuccess'));
   } catch (err) {
+    console.error('代理设置验证失败:', err);
     message.error(t('settings.network.messages.proxyError'));
   }
 };

@@ -12,8 +12,8 @@ import { initializeRemoteControl } from './modules/remoteControl';
 import { initializeShortcuts, registerShortcuts } from './modules/shortcuts';
 import { initializeTray, updateCurrentSong, updatePlayState, updateTrayMenu } from './modules/tray';
 import { createMainWindow, initializeWindowManager, setAppQuitting } from './modules/window';
-import { startMusicApi } from './server';
 import { initWindowSizeManager } from './modules/window-size';
+import { startMusicApi } from './server';
 
 // 导入所有图标
 const iconPath = join(__dirname, '../../resources');

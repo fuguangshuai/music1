@@ -1,10 +1,11 @@
+import cors from 'cors';
 import { ipcMain } from 'electron';
 import express from 'express';
-import cors from 'cors';
-import os from 'os';
-import { getStore } from './config';
-import path from 'path';
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
+
+import { getStore } from './config';
 
 // 定义远程控制相关接口
 export interface RemoteControlConfig {

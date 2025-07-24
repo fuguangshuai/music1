@@ -34,9 +34,9 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from 'vue-router';
 import { ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useRoute } from 'vue-router';
 
 import icon from '@/assets/icon.png';
 import { isMobile } from '@/utils';

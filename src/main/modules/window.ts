@@ -2,26 +2,27 @@ import { is } from '@electron-toolkit/utils';
 import {
   app,
   BrowserWindow,
-  nativeImage,
   globalShortcut,
   ipcMain,
+  nativeImage,
   screen,
   session,
   shell
 } from 'electron';
 import Store from 'electron-store';
 import { join } from 'path';
+
 import {
-  DEFAULT_MAIN_WIDTH,
-  DEFAULT_MAIN_HEIGHT,
-  DEFAULT_MINI_WIDTH,
-  DEFAULT_MINI_HEIGHT,
   applyContentZoom,
-  saveWindowState,
   applyInitialState,
-  initWindowSizeHandlers,
+  DEFAULT_MAIN_HEIGHT,
+  DEFAULT_MAIN_WIDTH,
+  DEFAULT_MINI_HEIGHT,
+  DEFAULT_MINI_WIDTH,
   getWindowOptions,
   getWindowState,
+  initWindowSizeHandlers,
+  saveWindowState,
   WindowState
 } from './window-size';
 

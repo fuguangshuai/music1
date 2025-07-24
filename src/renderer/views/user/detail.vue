@@ -134,8 +134,8 @@ import { useRoute, useRouter } from 'vue-router';
 
 import { getListDetail } from '@/api/list';
 import { getUserDetail, getUserPlaylist, getUserRecord } from '@/api/user';
-import SongItem from '@/components/common/SongItem.vue';
 import { navigateToMusicList } from '@/components/common/MusicListNavigator';
+import SongItem from '@/components/common/SongItem.vue';
 import { usePlayerStore } from '@/store/modules/player';
 import type { Playlist } from '@/type/listDetail';
 import type { IUserDetail } from '@/type/user';

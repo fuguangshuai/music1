@@ -50,6 +50,7 @@
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
+
 import { type Platform } from '@/types/music';
 import { isElectron } from '@/utils';
 

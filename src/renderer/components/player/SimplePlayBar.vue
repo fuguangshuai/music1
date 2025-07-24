@@ -70,12 +70,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, onMounted, watch } from 'vue';
-import { secondToMinute } from '@/utils';
+import { computed, onMounted, ref, watch } from 'vue';
+
 import { allTime, nowTime, playMusic } from '@/hooks/MusicHook';
 import { audioService } from '@/services/audioService';
 import { usePlayerStore } from '@/store/modules/player';
 import { useSettingsStore } from '@/store/modules/settings';
+import { secondToMinute } from '@/utils';
 
 const props = withDefaults(
   defineProps<{

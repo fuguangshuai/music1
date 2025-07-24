@@ -157,8 +157,12 @@
 <script lang="ts" setup>
 import { useThrottleFn } from '@vueuse/core';
 import { useMessage } from 'naive-ui';
+import { storeToRefs } from 'pinia';
 import { computed, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
+
+import MusicFullWrapper from '@/components/lyric/MusicFullWrapper.vue';
+import AdvancedControlsPopover from '@/components/player/AdvancedControlsPopover.vue';
 import ReparsePopover from '@/components/player/ReparsePopover.vue';
 import {
   allTime,
@@ -170,13 +174,10 @@ import {
   textColors
 } from '@/hooks/MusicHook';
 import { useArtist } from '@/hooks/useArtist';
-import MusicFullWrapper from '@/components/lyric/MusicFullWrapper.vue';
 import { audioService } from '@/services/audioService';
 import { usePlayerStore } from '@/store/modules/player';
 import { useSettingsStore } from '@/store/modules/settings';
 import { getImgUrl, isElectron, isMobile, secondToMinute, setAnimationClass } from '@/utils';
-import AdvancedControlsPopover from '@/components/player/AdvancedControlsPopover.vue';
-import { storeToRefs } from 'pinia';
 
 const playerStore = usePlayerStore();
 const settingsStore = useSettingsStore();

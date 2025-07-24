@@ -99,10 +99,11 @@
 import { computed, onMounted, ref, watch, watchEffect } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
+
 import { getSearchKeyword } from '@/api/home';
 import { getUserDetail } from '@/api/login';
-import { useZoom } from '@/hooks/useZoom';
 import { SEARCH_TYPES, USER_SET_OPTIONS } from '@/const/bar-const';
+import { useZoom } from '@/hooks/useZoom';
 import { useSearchStore } from '@/store/modules/search';
 import { useUserStore } from '@/store/modules/user';
 import { getImgUrl, isElectron } from '@/utils';

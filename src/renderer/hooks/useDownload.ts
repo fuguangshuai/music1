@@ -1,7 +1,7 @@
 import { cloneDeep } from 'lodash';
+import { useMessage } from 'naive-ui';
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useMessage } from 'naive-ui';
 
 import { getSongUrl } from '@/store/modules/player';
 import type { SongResult } from '@/type/music';

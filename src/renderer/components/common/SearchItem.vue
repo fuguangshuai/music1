@@ -31,13 +31,14 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+
 import { getAlbum, getListDetail } from '@/api/list';
 import MvPlayer from '@/components/MvPlayer.vue';
+import { useMusicStore } from '@/store/modules/music';
 import { usePlayerStore } from '@/store/modules/player';
 import { IMvItem } from '@/type/mv';
 import { getImgUrl } from '@/utils';
-import { useRouter } from 'vue-router';
-import { useMusicStore } from '@/store/modules/music';
 
 const props = withDefaults(
   defineProps<{

@@ -1,7 +1,8 @@
+import { useThrottleFn } from '@vueuse/core';
 import { cloneDeep } from 'lodash';
+import { createDiscreteApi } from 'naive-ui';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
-import { useThrottleFn } from '@vueuse/core';
 
 import i18n from '@/../i18n/renderer';
 
@@ -9,13 +10,12 @@ import { getLikedList, getMusicLrc, getMusicUrl, getParsingMusicUrl, likeSong } 
 import { useMusicHistory } from '@/hooks/MusicHistoryHook';
 import { audioService } from '@/services/audioService';
 import type { ILyric, ILyricText, SongResult } from '@/type/music';
+import { type Platform } from '@/types/music';
 import { getImgUrl } from '@/utils';
 import { getImageLinearBackground } from '@/utils/linearColor';
-import { createDiscreteApi } from 'naive-ui';
 
 import { useSettingsStore } from './settings';
 import { useUserStore } from './user';
-import { type Platform } from '@/types/music';
 
 const musicHistory = useMusicHistory();
 const { message } = createDiscreteApi(['message']);
@@ -1095,8 +1095,11 @@ export const usePlayerStore = defineStore('player', () => {
         const isPlaying = settingStore.setData.autoPlay;
 
         await handlePlayMusic(
+          
           { ...savedPlayMusic, isFirstPlay: true, playMusicUrl: undefined },
+         
           isPlaying
+        
         );
       } catch (error) {
         console.error('重新获取音乐链接失败:', error);
@@ -1172,7 +1175,7 @@ export const usePlayerStore = defineStore('player', () => {
         checkPlaybackState(playMusic.value);
       }
 
-      // 发布音频就绪事件，让 MusicHook.ts 来处理设置监听器
+      // 发布音频就绪事件
       window.dispatchEvent(
         new CustomEvent('audio-ready', { detail: { sound: newSound, shouldPlay } })
       );

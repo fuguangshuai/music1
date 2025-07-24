@@ -73,13 +73,14 @@
 </template>
 
 <script lang="ts" setup>
+import { useMessage } from 'naive-ui';
 import { ref, watch, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useMessage } from 'naive-ui';
+
 import { playMusic } from '@/hooks/MusicHook';
+import { audioService } from '@/services/audioService';
 import { usePlayerStore } from '@/store/modules/player';
 import type { Platform } from '@/types/music';
-import { audioService } from '@/services/audioService';
 import { isElectron } from '@/utils';
 
 const playerStore = usePlayerStore();
@@ -145,6 +146,7 @@ const initSelectedSources = () => {
     try {
       selectedSourcesValue.value = JSON.parse(savedSource);
     } catch (e) {
+      console.error('解析保存的音源设置失败:', e);
       selectedSourcesValue.value = [];
     }
   } else {

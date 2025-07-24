@@ -12,10 +12,29 @@
                 <div class="set-item-title">{{ t('settings.basic.themeMode') }}</div>
                 <div class="set-item-content">{{ t('settings.basic.themeModeDesc') }}</div>
               </div>
-              <n-switch :value="settingsStore.theme === 'dark'" @click="settingsStore.toggleTheme">
-                <template #checked><i class="ri-moon-line"></i></template>
-                <template #unchecked><i class="ri-sun-line"></i></template>
-              </n-switch>
+              <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2">
+                  <n-switch v-model:value="setData.autoTheme" @update:value="handleAutoThemeChange">
+                    <template #checked><i class="ri-smartphone-line"></i></template>
+                    <template #unchecked><i class="ri-settings-line"></i></template>
+                  </n-switch>
+                  <span class="text-sm text-gray-500">
+                    {{
+                      setData.autoTheme
+                        ? t('settings.basic.autoTheme')
+                        : t('settings.basic.manualTheme')
+                    }}
+                  </span>
+                </div>
+                <n-switch
+                  v-model:value="isDarkTheme"
+                  :disabled="setData.autoTheme"
+                  :class="{ 'opacity-50': setData.autoTheme }"
+                >
+                  <template #checked><i class="ri-moon-line"></i></template>
+                  <template #unchecked><i class="ri-sun-line"></i></template>
+                </n-switch>
+              </div>
             </div>
 
             <!-- 语言设置 -->
@@ -416,16 +435,16 @@ import { useI18n } from 'vue-i18n';
 import localData from '@/../main/set.json';
 import PlayBottom from '@/components/common/PlayBottom.vue';
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
-import ShortcutSettings from '@/components/settings/ShortcutSettings.vue';
-import ProxySettings from '@/components/settings/ProxySettings.vue';
 import ClearCacheSettings from '@/components/settings/ClearCacheSettings.vue';
 import MusicSourceSettings from '@/components/settings/MusicSourceSettings.vue';
+import ProxySettings from '@/components/settings/ProxySettings.vue';
 import RemoteControlSetting from '@/components/settings/ServerSetting.vue';
+import ShortcutSettings from '@/components/settings/ShortcutSettings.vue';
 import { useSettingsStore } from '@/store/modules/settings';
 import { useUserStore } from '@/store/modules/user';
+import { type Platform } from '@/types/music';
 import { isElectron, isMobile } from '@/utils';
 import { openDirectory, selectDirectory } from '@/utils/fileOperation';
-import { type Platform } from '@/types/music';
 
 const platform = window.electron ? window.electron.ipcRenderer.sendSync('get-platform') : 'web';
 
@@ -475,6 +494,11 @@ watch(
   },
   { deep: true, immediate: true }
 );
+
+const isDarkTheme = computed({
+  get: () => settingsStore.theme === 'dark',
+  set: () => settingsStore.toggleTheme()
+});
 
 const restartApp = () => {
   window.electron.ipcRenderer.send('restart');

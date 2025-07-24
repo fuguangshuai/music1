@@ -1,26 +1,23 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <title>SizeMusicPlayer 远程控制</title>
-    <style>
-      :root {
-        --primary-color: #007aff;
-        --secondary-color: #5ac8fa;
-        --success-color: #4cd964;
-        --danger-color: #ff3b30;
-        --warning-color: #ff9500;
-        --light-gray: #f2f2f7;
-        --medium-gray: #e5e5ea;
-        --dark-gray: #8e8e93;
-        --text-color: #000000;
-        --text-secondary: #6c6c6c;
-        --background-color: #ffffff;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SizeMusicPlayer 远程控制</title>
+  <style>
+    :root {
+      --primary-color: #007AFF;
+      --secondary-color: #5AC8FA;
+      --success-color: #4CD964;
+      --danger-color: #FF3B30;
+      --warning-color: #FF9500;
+      --light-gray: #F2F2F7;
+      --medium-gray: #E5E5EA;
+      --dark-gray: #8E8E93;
+      --text-color: #000000;
+      --text-secondary: #6C6C6C;
+      --background-color: #FFFFFF;
+    }
 
       @media (prefers-color-scheme: dark) {
         :root {
@@ -253,29 +250,28 @@
         margin-left: 8px;
       }
 
-      @media (max-width: 350px) {
-        .controls,
-        .extra-controls {
-          gap: 8px;
-        }
-
-        .btn {
-          padding: 12px 0;
-          font-size: 12px;
-        }
-
-        .btn svg {
-          width: 20px;
-          height: 20px;
-          margin-bottom: 6px;
-        }
+    @media (max-width: 350px) {
+      .controls, .extra-controls {
+        gap: 8px;
       }
-    </style>
-  </head>
-  <body>
-    <div class="header">
-      <h1>SizeMusicPlayer 远程控制</h1>
-    </div>
+      
+      .btn {
+        padding: 12px 0;
+        font-size: 12px;
+      }
+      
+      .btn svg {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>SizeMusicPlayer 远程控制</h1>
+  </div>
 
     <div class="container">
       <div class="card" id="songInfoCard">

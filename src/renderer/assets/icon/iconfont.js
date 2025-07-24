@@ -58,7 +58,7 @@
     function e() {
       try {
         h.documentElement.doScroll('left');
-      } catch (c) {
+      } catch {
         return void setTimeout(e, 50);
       }
       p();
