@@ -84,33 +84,6 @@ export const getMusicLrc = async (id: number) => {
 };
 
 /**
-<<<<<<< HEAD
-=======
- * 从Bilibili获取音频URL
- * @param data 歌曲数据
- * @returns 解析结果
- */
-const getBilibiliAudio = async (data: SongResult) => {
-  const songName = data?.name || '';
-  const artistName =
-    Array.isArray(data?.ar) && data.ar.length > 0 && data.ar[0]?.name ? data.ar[0].name : '';
-  const albumName = data?.al && typeof data.al === 'object' && data.al?.name ? data.al.name : '';
-
-  const searchQuery = [songName, artistName, albumName].filter(Boolean).join(' ').trim();
-  console.log('开始搜索bilibili音频:', searchQuery);
-
-  const url = await searchAndGetBilibiliAudioUrl(searchQuery);
-  return {
-    data: {
-      code: 200,
-      message: 'success',
-      data: { url }
-    }
-  };
-};
-
-/**
->>>>>>> b/main
  * 从GD音乐台获取音频URL
  * @param id 歌曲ID
  * @param data 歌曲数据
@@ -136,13 +109,9 @@ const getGDMusicAudio = async (id: number, data: SongResult) => {
  * @returns 解析结果
  */
 const getUnblockMusicAudio = (id: number, data: SongResult, sources: any[]) => {
-<<<<<<< HEAD
   const filteredSources = sources.filter(
     (source) => !['gdmusic', 'stellar', 'cloud'].includes(source)
   );
-=======
-  const filteredSources = sources.filter((source) => source !== 'gdmusic');
->>>>>>> b/main
   console.log(`使用unblockMusic解析，音源:`, filteredSources);
   return window.api.unblockMusic(id, cloneDeep(data), cloneDeep(filteredSources));
 };
@@ -184,27 +153,8 @@ export const getParsingMusicUrl = async (id: number, data: SongResult) => {
     musicSources = settingStore.setData.enabledMusicSources || [];
   }
 
-<<<<<<< HEAD
   // 2. 按优先级解析：UnblockMusic → 星辰音乐 → 云端音乐 → GD音乐台
   // 2.1 UnblockMusic解析（优先级最高）
-=======
-  // 2. 按优先级解析
-
-  // 2.1 Bilibili解析(优先级最高)
-  if (musicSources.includes('bilibili')) {
-    return await getBilibiliAudio(data);
-  }
-
-  // 2.2 GD音乐台解析
-  if (musicSources.includes('gdmusic')) {
-    const gdResult = await getGDMusicAudio(id, data);
-    if (gdResult) return gdResult;
-    // GD解析失败，继续下一步
-    console.log('GD音乐台解析失败，尝试使用其他音源');
-  }
-  console.log('musicSources', musicSources);
-  // 2.3 使用unblockMusic解析其他音源
->>>>>>> b/main
   if (isElectron && musicSources.length > 0) {
     // const unblockSources = musicSources.filter(
     //   source => ['migu', 'kugou', 'pyncmd'].includes(source)
@@ -222,7 +172,6 @@ export const getParsingMusicUrl = async (id: number, data: SongResult) => {
       console.log('❌ UnblockMusic解析失败:', error);
     }
   }
-<<<<<<< HEAD
   // 2.2 星辰音乐解析（API1）
   if (musicSources.includes('stellar')) {
     console.log('🎵 使用星辰音乐解析');
@@ -274,12 +223,6 @@ export const getParsingMusicUrl = async (id: number, data: SongResult) => {
   }
   // 所有音源解析失败
   console.log(`❌ 所有音源解析失败 - 歌曲ID: ${id}, 歌曲: ${data.name || '未知'}`);
-=======
-
-  // 3. 后备方案：使用API请求
-  console.log('无可用音源或不在Electron环境中，使用API请求');
-  return requestMusic.get<any>('/music', { params: { id } });
->>>>>>> b/main
 };
 
 // 收藏歌曲

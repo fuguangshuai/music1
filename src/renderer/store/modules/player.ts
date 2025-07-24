@@ -5,7 +5,6 @@ import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 
 import i18n from '@/../i18n/renderer';
-
 import { getLikedList, getMusicLrc, getMusicUrl, getParsingMusicUrl, likeSong } from '@/api/music';
 import { useMusicHistory } from '@/hooks/MusicHistoryHook';
 import { audioService } from '@/services/audioService';

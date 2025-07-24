@@ -500,6 +500,10 @@ const isDarkTheme = computed({
   set: () => settingsStore.toggleTheme()
 });
 
+const handleAutoThemeChange = (value: boolean) => {
+  settingsStore.setAutoTheme(value);
+};
+
 const restartApp = () => {
   window.electron.ipcRenderer.send('restart');
 };

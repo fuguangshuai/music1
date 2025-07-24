@@ -16,6 +16,7 @@ import { darkTheme, lightTheme } from 'naive-ui';
 import { computed, nextTick, onMounted, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
+
 import homeRouter from '@/router/home';
 import { useMenuStore } from '@/store/modules/menu';
 import { usePlayerStore } from '@/store/modules/player';
