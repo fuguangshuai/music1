@@ -16,6 +16,7 @@
     "dev": "electron-vite dev",
     "dev:web": "vite dev",
     "build": "electron-vite build",
+    "build:web": "npm run build && rm -rf /opt/1panel/apps/openresty/openresty/www/sites/music.sizeof.top/index/* && mv /root/music/out/renderer/* /opt/1panel/apps/openresty/openresty/www/sites/music.sizeof.top/index/ && rm -rf /root/music/out && chown -R 1000:1000 /opt/1panel/apps/openresty/openresty/www/sites/music.sizeof.top/index",
     "postinstall": "electron-builder install-app-deps",
     "build:unpack": "npm run build && electron-builder --dir",
     "build:win": "npm run build && electron-builder --win",
