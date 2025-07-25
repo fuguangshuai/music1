@@ -135,7 +135,7 @@ export default {
   },
   settings: '设置',
   user: '用户',
-  toplist: '排行榜',
+  toplist: '榜单',
   history: '收藏历史',
   list: '歌单',
   mv: 'MV',
