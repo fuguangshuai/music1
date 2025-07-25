@@ -41,7 +41,7 @@ export function getAlbum(id: number | string) {
   return request.get('/album', { params: { id } });
 }
 
-// 获取排行榜列表
+// 获取榜单列表
 export function getToplist() {
   return request.get('/toplist');
 }

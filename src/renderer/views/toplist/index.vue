@@ -86,7 +86,7 @@ const loadToplist = async () => {
     const { data } = await getToplist();
     topList.value = data.list || [];
   } catch (error) {
-    console.error('加载排行榜列表失败:', error);
+    console.error('加载榜单列表失败:', error);
   } finally {
     loading.value = false;
   }
