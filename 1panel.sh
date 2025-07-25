@@ -1,0 +1,1 @@
+rm -rf /opt/1panel/apps/openresty/openresty/www/sites/music.sizeof.top/index/* && mv /root/music/out/renderer/* /opt/1panel/apps/openresty/openresty/www/sites/music.sizeof.top/index/ && rm -rf /root/music/out && chown -R 1000:1000 /opt/1panel/apps/openresty/openresty/www/sites/music.sizeof.top/index
