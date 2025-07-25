@@ -126,7 +126,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref, watchEffect, computed } from 'vue';
+import { computed, onMounted, ref, watchEffect } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 
@@ -134,6 +134,7 @@ import { getDayRecommend, getHotSinger } from '@/api/home';
 import { getListDetail } from '@/api/list';
 import { getMusicDetail } from '@/api/music';
 import { getUserPlaylist } from '@/api/user';
+import { navigateToMusicList } from '@/components/common/MusicListNavigator';
 import { useArtist } from '@/hooks/useArtist';
 import { usePlayerStore, useUserStore } from '@/store';
 import { IDayRecommend } from '@/type/day_recommend';
@@ -148,7 +149,6 @@ import {
   setAnimationDelay,
   setBackgroundImg
 } from '@/utils';
-import { navigateToMusicList } from '@/components/common/MusicListNavigator';
 
 const userStore = useUserStore();
 const playerStore = usePlayerStore();

@@ -220,20 +220,20 @@ defineOptions({
   name: 'MusicList'
 });
 
+import { useMessage } from 'naive-ui';
 import PinyinMatch from 'pinyin-match';
-import { computed, onMounted, onUnmounted, ref, watch, nextTick } from 'vue';
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
-import { updatePlaylistTracks, subscribePlaylist } from '@/api/music';
-import { useMessage } from 'naive-ui';
 
+import { subscribePlaylist, updatePlaylistTracks } from '@/api/music';
 import { getMusicDetail, getMusicListByType } from '@/api/music';
-import SongItem from '@/components/common/SongItem.vue';
 import PlayBottom from '@/components/common/PlayBottom.vue';
+import SongItem from '@/components/common/SongItem.vue';
+import { useDownload } from '@/hooks/useDownload';
 import { useMusicStore, usePlayerStore } from '@/store';
 import { SongResult } from '@/type/music';
 import { getImgUrl, isElectron, isMobile, setAnimationClass } from '@/utils';
-import { useDownload } from '@/hooks/useDownload';
 
 const { t } = useI18n();
 const route = useRoute();

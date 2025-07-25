@@ -43,7 +43,7 @@
       </template>
     </div>
     <playlist-drawer v-model="showPlaylistDrawer" :song-id="currentSongId" />
-    <SleepTimerTop v-if="!isMobile" />
+    <sleep-timer-top v-if="!isMobile" />
     <!-- 下载管理抽屉 -->
     <download-drawer
       v-if="
@@ -64,13 +64,13 @@ import { useRoute } from 'vue-router';
 
 import DownloadDrawer from '@/components/common/DownloadDrawer.vue';
 import PlayBottom from '@/components/common/PlayBottom.vue';
+import SleepTimerTop from '@/components/player/SleepTimerTop.vue';
 import homeRouter from '@/router/home';
 import otherRouter from '@/router/other';
 import { useMenuStore } from '@/store/modules/menu';
 import { usePlayerStore } from '@/store/modules/player';
 import { useSettingsStore } from '@/store/modules/settings';
 import { isElectron, isMobile } from '@/utils';
-import SleepTimerTop from '@/components/player/SleepTimerTop.vue';
 
 const keepAliveInclude = computed(() => {
   const allRoutes = [...homeRouter, ...otherRouter];

@@ -73,13 +73,14 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, watch, computed } from 'vue';
-import { useI18n } from 'vue-i18n';
 import { useMessage } from 'naive-ui';
+import { computed, ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
+
 import { playMusic } from '@/hooks/MusicHook';
+import { audioService } from '@/services/audioService';
 import { usePlayerStore } from '@/store/modules/player';
 import type { Platform } from '@/types/music';
-import { audioService } from '@/services/audioService';
 import { isElectron } from '@/utils';
 
 const playerStore = usePlayerStore();

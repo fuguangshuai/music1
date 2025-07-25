@@ -82,10 +82,12 @@
 <script lang="ts" setup>
 import { NCheckbox, NEllipsis, NImage } from 'naive-ui';
 import { computed, ref } from 'vue';
+
 import { usePlayerStore } from '@/store';
-import BaseSongItem from './BaseSongItem.vue';
 import type { SongResult } from '@/type/music';
 import { getImgUrl } from '@/utils';
+
+import BaseSongItem from './BaseSongItem.vue';
 
 const playerStore = usePlayerStore();
 

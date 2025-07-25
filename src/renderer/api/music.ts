@@ -1,12 +1,14 @@
+import { cloneDeep } from 'lodash';
+
 import { musicDB } from '@/hooks/MusicHook';
 import { useSettingsStore, useUserStore } from '@/store';
 import type { ILyric } from '@/type/lyric';
+import type { SongResult } from '@/type/music';
 import { isElectron } from '@/utils';
 import request from '@/utils/request';
 import requestMusic from '@/utils/request_music';
-import { cloneDeep } from 'lodash';
+
 import { parseFromGDMusic } from './gdmusic';
-import type { SongResult } from '@/type/music';
 
 const { addData, getData, deleteData } = musicDB;
 

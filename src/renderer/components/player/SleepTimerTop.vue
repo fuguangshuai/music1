@@ -9,8 +9,9 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
 import { storeToRefs } from 'pinia';
+import { useI18n } from 'vue-i18n';
+
 import { usePlayerStore } from '@/store/modules/player';
 
 const { t } = useI18n();

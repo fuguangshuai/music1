@@ -111,9 +111,9 @@ import { useRouter } from 'vue-router';
 
 import { getListDetail } from '@/api/list';
 import { getUserDetail, getUserPlaylist, getUserRecord } from '@/api/user';
+import { navigateToMusicList } from '@/components/common/MusicListNavigator';
 import PlayBottom from '@/components/common/PlayBottom.vue';
 import SongItem from '@/components/common/SongItem.vue';
-import { navigateToMusicList } from '@/components/common/MusicListNavigator';
 import { usePlayerStore } from '@/store/modules/player';
 import { useUserStore } from '@/store/modules/user';
 import type { Playlist } from '@/type/listDetail';

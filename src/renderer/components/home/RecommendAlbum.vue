@@ -32,9 +32,9 @@ import { useRouter } from 'vue-router';
 
 import { getNewAlbum } from '@/api/home';
 import { getAlbum } from '@/api/list';
-import { getImgUrl, setAnimationClass, setAnimationDelay } from '@/utils';
 import { navigateToMusicList } from '@/components/common/MusicListNavigator';
 import type { IAlbumNew } from '@/type/album';
+import { getImgUrl, setAnimationClass, setAnimationDelay } from '@/utils';
 
 const { t } = useI18n();
 const albumData = ref<IAlbumNew>();

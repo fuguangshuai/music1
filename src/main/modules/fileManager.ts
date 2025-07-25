@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { app, dialog, ipcMain, Notification, protocol, shell } from 'electron';
 import Store from 'electron-store';
+import { fileTypeFromFile } from 'file-type';
 import * as fs from 'fs';
 import * as http from 'http';
 import * as https from 'https';
-import * as NodeID3 from 'node-id3';
-import * as path from 'path';
-import * as os from 'os';
 import * as mm from 'music-metadata';
-import { fileTypeFromFile } from 'file-type';
+import * as NodeID3 from 'node-id3';
+import * as os from 'os';
+import * as path from 'path';
 
 import { getStore } from './config';
 
@@ -42,7 +42,7 @@ export function initializeFileManager() {
   // 注册本地文件协议
   protocol.registerFileProtocol('local', (request, callback) => {
     try {
-      let url = request.url;
+      const url = request.url;
       // local://C:/Users/xxx.mp3
       let filePath = decodeURIComponent(url.replace('local:///', ''));
 

@@ -1,12 +1,14 @@
+import { useDialog, useMessage } from 'naive-ui';
+import { computed, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+
 import { usePlayerStore } from '@/store';
 import type { SongResult } from '@/type/music';
-import { computed, ref } from 'vue';
 import { getImgUrl } from '@/utils';
 import { getImageBackground } from '@/utils/linearColor';
-import { useMessage, useDialog } from 'naive-ui';
-import { useI18n } from 'vue-i18n';
-import { useDownload } from './useDownload';
+
 import { useArtist } from './useArtist';
+import { useDownload } from './useDownload';
 
 export function useSongItem(props: { item: SongResult; canRemove?: boolean }) {
   const { t } = useI18n();

@@ -96,9 +96,10 @@ import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import { usePlayerStore } from '@/store';
-import BaseSongItem from './BaseSongItem.vue';
 import type { SongResult } from '@/type/music';
 import { getImgUrl } from '@/utils';
+
+import BaseSongItem from './BaseSongItem.vue';
 
 const { t } = useI18n();
 const playerStore = usePlayerStore();

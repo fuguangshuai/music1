@@ -57,9 +57,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch, onMounted, onUnmounted, nextTick } from 'vue';
+import { useDialog, useMessage } from 'naive-ui';
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useMessage, useDialog } from 'naive-ui';
+
 import SongItem from '@/components/common/SongItem.vue';
 import { usePlayerStore } from '@/store/modules/player';
 import type { SongResult } from '@/type/music';

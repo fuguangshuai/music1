@@ -83,12 +83,13 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, h, watch } from 'vue';
-import { useI18n } from 'vue-i18n';
 import { DropdownOption } from 'naive-ui';
-import { usePlayerStore } from '@/store/modules/player';
+import { computed, h, ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
+
 import EqControl from '@/components/EQControl.vue';
 import SleepTimer from '@/components/player/SleepTimer.vue';
+import { usePlayerStore } from '@/store/modules/player';
 
 const { t } = useI18n();
 const playerStore = usePlayerStore();

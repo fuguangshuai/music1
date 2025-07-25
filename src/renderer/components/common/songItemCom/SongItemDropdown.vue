@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 import type { MenuOption } from 'naive-ui';
-import { NEllipsis, NImage, NDropdown } from 'naive-ui';
+import { NDropdown, NEllipsis, NImage } from 'naive-ui';
 import { computed, h, inject } from 'vue';
 import { useI18n } from 'vue-i18n';
 

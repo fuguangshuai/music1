@@ -33,10 +33,11 @@
 </template>
 
 <script lang="ts" setup>
-import SongItemDropdown from './SongItemDropdown.vue';
 import { useSongItem } from '@/hooks/useSongItem';
-import { isElectron } from '@/utils';
 import type { SongResult } from '@/type/music';
+import { isElectron } from '@/utils';
+
+import SongItemDropdown from './SongItemDropdown.vue';
 
 const props = defineProps<{
   item: SongResult;

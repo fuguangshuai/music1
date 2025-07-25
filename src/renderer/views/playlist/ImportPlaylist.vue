@@ -213,10 +213,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed } from 'vue';
-import { useI18n } from 'vue-i18n';
 import { useMessage } from 'naive-ui';
-import { importPlaylist, getImportTaskStatus } from '@/api/playlist';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+import { getImportTaskStatus, importPlaylist } from '@/api/playlist';
 import { setAnimationClass } from '@/utils';
 
 const { t } = useI18n();

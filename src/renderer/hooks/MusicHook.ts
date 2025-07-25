@@ -5,10 +5,10 @@ import { computed, getCurrentInstance, nextTick, onUnmounted, ref, watch } from 
 import useIndexedDB from '@/hooks/IndexDBHook';
 import { audioService } from '@/services/audioService';
 import pinia, { usePlayerStore } from '@/store';
+import { getSongUrl } from '@/store/modules/player';
 import type { Artist, ILyricText, SongResult } from '@/type/music';
 import { isElectron } from '@/utils';
 import { getTextColors } from '@/utils/linearColor';
-import { getSongUrl } from '@/store/modules/player';
 
 const windowData = window as any;
 

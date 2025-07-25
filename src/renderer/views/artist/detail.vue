@@ -184,20 +184,20 @@
 
 <script setup lang="ts">
 import { useDateFormat } from '@vueuse/core';
+import { useMessage } from 'naive-ui';
+import PinyinMatch from 'pinyin-match';
 import {
   computed,
+  nextTick,
+  onActivated,
+  onDeactivated,
   onMounted,
   onUnmounted,
   ref,
-  watch,
-  nextTick,
-  onActivated,
-  onDeactivated
+  watch
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
-import PinyinMatch from 'pinyin-match';
-import { useMessage } from 'naive-ui';
 
 import { getArtistAlbums, getArtistDetail, getArtistTopSongs } from '@/api/artist';
 import { getMusicDetail } from '@/api/music';

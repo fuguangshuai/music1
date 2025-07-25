@@ -416,16 +416,16 @@ import { useI18n } from 'vue-i18n';
 import localData from '@/../main/set.json';
 import PlayBottom from '@/components/common/PlayBottom.vue';
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
-import ShortcutSettings from '@/components/settings/ShortcutSettings.vue';
-import ProxySettings from '@/components/settings/ProxySettings.vue';
 import ClearCacheSettings from '@/components/settings/ClearCacheSettings.vue';
 import MusicSourceSettings from '@/components/settings/MusicSourceSettings.vue';
+import ProxySettings from '@/components/settings/ProxySettings.vue';
 import RemoteControlSetting from '@/components/settings/ServerSetting.vue';
+import ShortcutSettings from '@/components/settings/ShortcutSettings.vue';
 import { useSettingsStore } from '@/store/modules/settings';
 import { useUserStore } from '@/store/modules/user';
+import { type Platform } from '@/types/music';
 import { isElectron, isMobile } from '@/utils';
 import { openDirectory, selectDirectory } from '@/utils/fileOperation';
-import { type Platform } from '@/types/music';
 
 const platform = window.electron ? window.electron.ipcRenderer.sendSync('get-platform') : 'web';
 

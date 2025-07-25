@@ -24,9 +24,9 @@ import { useSettingsStore } from '@/store/modules/settings';
 import { isElectron, isLyricWindow } from '@/utils';
 
 import { initAudioListeners } from './hooks/MusicHook';
+import { audioService } from './services/audioService';
 import { isMobile } from './utils';
 import { useAppShortcuts } from './utils/appShortcuts';
-import { audioService } from './services/audioService';
 
 const { locale } = useI18n();
 const settingsStore = useSettingsStore();

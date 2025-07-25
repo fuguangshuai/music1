@@ -1,21 +1,20 @@
+import { useThrottleFn } from '@vueuse/core';
 import { cloneDeep } from 'lodash';
+import { createDiscreteApi } from 'naive-ui';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
-import { useThrottleFn } from '@vueuse/core';
 
 import i18n from '@/../i18n/renderer';
-
 import { getLikedList, getMusicLrc, getMusicUrl, getParsingMusicUrl, likeSong } from '@/api/music';
 import { useMusicHistory } from '@/hooks/MusicHistoryHook';
 import { audioService } from '@/services/audioService';
 import type { ILyric, ILyricText, SongResult } from '@/type/music';
+import { type Platform } from '@/types/music';
 import { getImgUrl } from '@/utils';
 import { getImageLinearBackground } from '@/utils/linearColor';
-import { createDiscreteApi } from 'naive-ui';
 
 import { useSettingsStore } from './settings';
 import { useUserStore } from './user';
-import { type Platform } from '@/types/music';
 
 const musicHistory = useMusicHistory();
 const { message } = createDiscreteApi(['message']);

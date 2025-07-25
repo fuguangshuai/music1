@@ -110,9 +110,10 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref, onMounted, onUnmounted, watch } from 'vue';
-import { useI18n } from 'vue-i18n';
 import { storeToRefs } from 'pinia';
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
+
 import { usePlayerStore } from '@/store/modules/player';
 
 const { t } = useI18n();
