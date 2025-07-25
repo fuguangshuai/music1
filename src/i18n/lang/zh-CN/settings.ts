@@ -217,9 +217,9 @@ export default {
       'spotify-green': 'Spotify 绿',
       'apple-blue': '苹果蓝',
       'youtube-red': 'YouTube 红',
-      'orange': '活力橙',
-      'purple': '神秘紫',
-      'pink': '樱花粉'
+      orange: '活力橙',
+      purple: '神秘紫',
+      pink: '樱花粉'
     },
     tooltips: {
       openColorPicker: '打开色板',

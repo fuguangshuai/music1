@@ -218,9 +218,9 @@ export default {
       'spotify-green': 'Spotify Green',
       'apple-blue': 'Apple Blue',
       'youtube-red': 'YouTube Red',
-      'orange': 'Vibrant Orange',
-      'purple': 'Mystic Purple',
-      'pink': 'Cherry Pink'
+      orange: 'Vibrant Orange',
+      purple: 'Mystic Purple',
+      pink: 'Cherry Pink'
     },
     tooltips: {
       openColorPicker: 'Open Color Picker',

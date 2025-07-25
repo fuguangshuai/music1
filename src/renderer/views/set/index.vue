@@ -19,11 +19,15 @@
                     <template #unchecked><i class="ri-settings-line"></i></template>
                   </n-switch>
                   <span class="text-sm text-gray-500">
-                    {{ setData.autoTheme ? t('settings.basic.autoTheme') : t('settings.basic.manualTheme') }}
+                    {{
+                      setData.autoTheme
+                        ? t('settings.basic.autoTheme')
+                        : t('settings.basic.manualTheme')
+                    }}
                   </span>
                 </div>
-                <n-switch 
-                  v-model:value="isDarkTheme" 
+                <n-switch
+                  v-model:value="isDarkTheme"
                   :disabled="setData.autoTheme"
                   :class="{ 'opacity-50': setData.autoTheme }"
                 >
